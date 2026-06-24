@@ -1,0 +1,9 @@
+name: Secure DevSecOps Pipeline
+on: [push, pull_request]
+jobs:
+  security-audit:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - run: chmod +x ./security-scan.sh
+    - run: ./security-scan.sh
