@@ -10,6 +10,9 @@ jobs:
     - name: Checkout Source Code
       uses: actions/checkout@v4
 
+    - name: Fix Windows Line Endings (CRLF to LF)
+      run: sed -i 's/\r$//' security-scan.sh
+
     - name: Set Execution Permission for Security Script
       run: chmod +x security-scan.sh
 
